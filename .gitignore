@@ -9,6 +9,8 @@
 *.jar
 *.war
 *.ear
+*.pem
+*.ppk
 
 #Gradle temporary files
 target/

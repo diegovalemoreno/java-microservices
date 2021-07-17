@@ -1,5 +1,17 @@
 server:
   port: 8000
+
+eureka:
+  client:
+    service-url:
+      defaultZone:
+        http://localhost:8761/eureka
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - '*'
 spring:
   application:
     name: cambio-service
