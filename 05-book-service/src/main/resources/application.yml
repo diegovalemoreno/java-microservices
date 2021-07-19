@@ -36,4 +36,19 @@ spring:
     schemas: book_service
     user: root
     password: admin123
-
+resilience4j:
+  ratelimiter:
+    instances:
+      default:
+        limit-for-period: 2
+        limit-refresh-period: 10s
+  retry:
+    instances:
+      foo-bar:
+        max-attempts: 5
+        wait-duration: 1s
+        enable-exponentiial-backoff: true
+  bulkhead:
+    instances:
+      default:
+        max-concurrent-calls: 10
