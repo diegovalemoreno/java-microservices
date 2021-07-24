@@ -36,6 +36,9 @@ spring:
     schemas: book_service
     user: root
     password: admin123
+  sleuth:
+    sampler:
+      probability: 1.0
 resilience4j:
   ratelimiter:
     instances:
@@ -47,7 +50,7 @@ resilience4j:
       foo-bar:
         max-attempts: 5
         wait-duration: 1s
-        enable-exponentiial-backoff: true
+        enable-exponential-backoff: true
   bulkhead:
     instances:
       default:
